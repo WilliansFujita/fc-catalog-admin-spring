@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.fullcycle.admin.catolog.MainTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-10-28T21:59:54" hostname="solumobinb" time="0.067">
+  <properties/>
+  <testcase name="testMain()" classname="com.fullcycle.admin.catolog.MainTest" time="0.067"/>
+  <system-out><![CDATA[Hello world!
+com.fullcycle.admin.catolog.domain.Category@2794eab6
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

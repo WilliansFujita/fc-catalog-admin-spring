@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.fullcycle.admin.catolog.category.create.CreateCategoryUseCaseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-11-05T09:29:20" hostname="solumobinb" time="0.63">
+  <properties/>
+  <testcase name="givenAValidCommand_WhenCreateCategoryThrownsAGenericError_thenShouldThrowAnError()" classname="com.fullcycle.admin.catolog.category.create.CreateCategoryUseCaseTest" time="0.63"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
