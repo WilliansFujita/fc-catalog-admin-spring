@@ -10,6 +10,8 @@ repositories {
 }
 
 dependencies {
+    implementation group: 'io.vavr', name: 'vavr', version: '0.10.4'
+
     implementation(project(":domain"))
     implementation project(path: ':domain')
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'

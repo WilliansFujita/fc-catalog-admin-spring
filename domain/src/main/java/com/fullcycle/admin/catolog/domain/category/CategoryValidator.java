@@ -22,14 +22,17 @@ public class CategoryValidator extends Validator {
             this.validationHandler().append(new Error("'name' should not be null"));
         }
 
-        if(this.category.getName().isBlank()){
+        if(this.category.getName()!=null && this.category.getName().isBlank()){
             this.validationHandler().append(new Error("'name' should not be empty"));
         }
 
-        int length = this.category.getName().trim().length();
-        if(length >255 || length<3){
-            this.validationHandler().append(new Error("'name' must be between 3 an 255 characters"));
+        if(this.category.getName()!=null){
+            int length = this.category.getName().trim().length();
+            if(length >255 || length<3){
+                this.validationHandler().append(new Error("'name' must be between 3 an 255 characters"));
+            }
         }
+
 
 
     }

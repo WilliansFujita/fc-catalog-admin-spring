@@ -45,7 +45,7 @@ public class CreateCategoryUseCaseTest {
         final var actualOutput = useCase.execute(aCommand);
 
         Assertions.assertNotNull(actualOutput);
-        Assertions.assertNotNull(actualOutput.id());
+        Assertions.assertNotNull(actualOutput.get().id());
 
         Mockito.verify(categoryGateWay,Mockito.times(1))
                 .create(Mockito.argThat(actualCategory->{
@@ -67,12 +67,14 @@ public class CreateCategoryUseCaseTest {
         final var expectedDescription = "A Categoria mais assistida";
         final var expectedIsActive =  true;
         final var expectedExceptionMessage = "'name' should not be null";
+        final var expectedErrorCount = 1;
 
         final var aCommand = CreateCategoryCommand.with(expectedName,expectedDescription,expectedIsActive);
 
-        final var actualException = Assertions.assertThrows(DomainException.class, () -> useCase.execute(aCommand));
+        final var notification = useCase.execute(aCommand).getLeft();
 
-        Assertions.assertEquals(expectedExceptionMessage, actualException.getMessage());
+        Assertions.assertEquals(expectedExceptionMessage, notification.firstError().message());
+        Assertions.assertEquals(expectedErrorCount, notification.getErrors().size());
         Mockito.verify(categoryGateWay,times(0)).create(any());
     }
 
@@ -91,7 +93,7 @@ public class CreateCategoryUseCaseTest {
         final var actualOutput = useCase.execute(aCommand);
 
         Assertions.assertNotNull(actualOutput);
-        Assertions.assertNotNull(actualOutput.id());
+        Assertions.assertNotNull(actualOutput.get().id());
 
         Mockito.verify(categoryGateWay,Mockito.times(1))
                 .create(Mockito.argThat(actualCategory->{
@@ -112,7 +114,8 @@ public class CreateCategoryUseCaseTest {
         final var expectedName = "Filmes";
         final var expectedDescription = "A Categoria mais assistida";
         final var expectedIsActive =  true;
-        final var expectedMessage = "gateway error";
+        final var expectedErrorMessage = "gateway error";
+        final var expectedErrorCount = 1;
 
 
         final var aCommand = CreateCategoryCommand.with(expectedName,expectedDescription,expectedIsActive);
@@ -121,9 +124,10 @@ public class CreateCategoryUseCaseTest {
                 .thenThrow(new IllegalStateException("gateway error"));
 
 
-        final var actualException = Assertions.assertThrows(IllegalStateException.class,()->useCase.execute(aCommand));
+        final var notification = useCase.execute(aCommand).getLeft();
 
-        Assertions.assertEquals(expectedMessage, actualException.getMessage());
+        Assertions.assertEquals(expectedErrorMessage, notification.firstError().message());
+        Assertions.assertEquals(expectedErrorCount, notification.getErrors().size());
         Mockito.verify(categoryGateWay,Mockito.times(1))
                 .create(Mockito.argThat(actualCategory->{
                             return Objects.equals(expectedName,actualCategory.getName())
