@@ -3,6 +3,7 @@ package com.fullcycle.admin.catolog.category.create;
 import com.fullcycle.admin.catolog.domain.category.CategoryGateway;
 import com.fullcycle.admin.catolog.domain.exceptions.DomainException;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -29,6 +30,11 @@ public class CreateCategoryUseCaseTest {
 
     @Mock
     private CategoryGateway categoryGateWay;
+
+    @BeforeEach
+    private void cleanUp(){
+        Mockito.reset(categoryGateWay);
+    }
 
     @Test
     public void givenAValidCommand_WhenCallCreateCategory_thenShouldReturnACategoryID(){

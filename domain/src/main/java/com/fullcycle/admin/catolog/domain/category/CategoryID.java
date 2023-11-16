@@ -38,7 +38,7 @@ public class CategoryID extends Identifier {
         return Objects.hash(values);
     }
 
-    public Object getValue() {
-        return this.values;
+    public String getValue() {
+        return this.values.toString();
     }
 }
