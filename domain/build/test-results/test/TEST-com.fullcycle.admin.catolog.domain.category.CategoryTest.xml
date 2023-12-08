@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.fullcycle.admin.catolog.domain.category.CategoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-11-03T16:14:36" hostname="solumobinb" time="0.052">
+<testsuite name="com.fullcycle.admin.catolog.domain.category.CategoryTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2023-11-19T18:16:45" hostname="solumobinb" time="0.187">
   <properties/>
-  <testcase name="giveAValidCategory_whenCallUpdateWithInvalidParams_thenReturnCategoryUpdate()" classname="com.fullcycle.admin.catolog.domain.category.CategoryTest" time="0.052"/>
+  <testcase name="givenAValidDescription_whenCallsNewCategory_thenInstantiateANewCategory()" classname="com.fullcycle.admin.catolog.domain.category.CategoryTest" time="0.074"/>
+  <testcase name="givenAnInvalidNullName_whenCallsNewCategoryAndValidate_thenShouldReturnError()" classname="com.fullcycle.admin.catolog.domain.category.CategoryTest" time="0.007"/>
+  <testcase name="givenAnInvalidNameLengthLessThen3_whenCallsNewCategoryAndValidate_thenShouldReturnError()" classname="com.fullcycle.admin.catolog.domain.category.CategoryTest" time="0.006"/>
+  <testcase name="givenAValidActiveCategory_whenCallsDeactivate_thenReturnCategoryDeactivated()" classname="com.fullcycle.admin.catolog.domain.category.CategoryTest" time="0.007"/>
+  <testcase name="giveAValidCategory_whenCallUpdateWithInvalidParams_thenReturnCategoryUpdate()" classname="com.fullcycle.admin.catolog.domain.category.CategoryTest" time="0.005"/>
+  <testcase name="givenIsValidFalse_whenCallsNewCategory_thenInstantiateANewCategory()" classname="com.fullcycle.admin.catolog.domain.category.CategoryTest" time="0.005"/>
+  <testcase name="givenAnInvalidEmptyName_whenCallsNewCategoryAndValidate_thenShouldReturnError()" classname="com.fullcycle.admin.catolog.domain.category.CategoryTest" time="0.005"/>
+  <testcase name="givenAValidInactiveCategory_whenCallsActivate_thenReturnCategoryActivated()" classname="com.fullcycle.admin.catolog.domain.category.CategoryTest" time="0.007"/>
+  <testcase name="giveAAValidCategory_whenCallUpdate_thenReturnCategoryUpdate()" classname="com.fullcycle.admin.catolog.domain.category.CategoryTest" time="0.004"/>
+  <testcase name="givenAnInvalidNameLengthMoreThen255_whenCallsNewCategoryAndValidate_thenShouldReturnError()" classname="com.fullcycle.admin.catolog.domain.category.CategoryTest" time="0.004"/>
+  <testcase name="giveAValidCategory_whenCallUpdateToInactive_thenReturnCategoryUpdate()" classname="com.fullcycle.admin.catolog.domain.category.CategoryTest" time="0.005"/>
+  <testcase name="givenAValidParams_whenCallsNewCategory_thenInstantiateANewCategory()" classname="com.fullcycle.admin.catolog.domain.category.CategoryTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

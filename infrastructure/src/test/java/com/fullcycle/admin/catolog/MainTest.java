@@ -1,6 +1,6 @@
 package com.fullcycle.admin.catolog;
 
-import com.fullcycle.admin.domain.Main;
+import com.fullcycle.admin.Main;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
